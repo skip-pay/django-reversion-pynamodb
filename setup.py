@@ -21,14 +21,14 @@ def read(filepath):
 
 
 setup(
-    name="django-reversion-pynamodb",
+    name="skip-django-reversion-pynamodb",
     version='.'.join(str(x) for x in __version__),
     license="BSD",
     description="An extension to the Django web framework that provides version control for model instances.",
     long_description=read('README.rst'),
     author="Dave Hall,Lubos Matl",
     author_email="dave@etianen.com, matllubos@gmail.com",
-    url="http://github.com/druids/django-reversion-pynamodb",
+    url="http://github.com/skip-pay/django-reversion-pynamodb",
     zip_safe=False,
     packages=find_packages(),
     package_data={
@@ -39,7 +39,7 @@ setup(
         "import_string>=0.1.0",
     ],
     extras_require={
-        'dynamodb': ['pydjamodb>=0.0.10', 'pynamodb>=5.3.4'],
+        'dynamodb': ['skip-pydjamodb>=0.0.9.2', 'pynamodb>=5.3.4'],
     },
     python_requires='>=3.6',
     classifiers=[
