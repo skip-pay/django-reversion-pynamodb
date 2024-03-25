@@ -1,5 +1,5 @@
-django==3.2
-skip-django-germanium==2.3.6.1
+django~=4.2
+skip-django-germanium @ git+https://github.com/skip-pay/germanium@tda/chore/django_bump
 flake8
 coverage
 sphinx

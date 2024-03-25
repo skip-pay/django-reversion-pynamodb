@@ -12,7 +12,7 @@ from django.db.models.deletion import Collector
 from django.db.models.functions import Cast
 from django.utils.encoding import force_str
 from django.utils.functional import cached_property
-from django.utils.translation import ugettext
+from django.utils.translation import gettext
 from django.utils.translation import gettext_lazy as _
 
 from reversion.backends.utils import get_object_version, get_local_field_dict, get_raw_field_dict
@@ -30,7 +30,7 @@ def _safe_revert(versions):
         except (IntegrityError, ObjectDoesNotExist):
             unreverted_versions.append(version)
     if len(unreverted_versions) == len(versions):
-        raise RevertError(ugettext("Could not save %(object_repr)s version - missing dependency.") % {
+        raise RevertError(gettext("Could not save %(object_repr)s version - missing dependency.") % {
             "object_repr": unreverted_versions[0],
         })
     if unreverted_versions:
