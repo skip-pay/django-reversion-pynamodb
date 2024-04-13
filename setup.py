@@ -20,6 +20,7 @@ def read(filepath):
         return f.read()
 
 
+
 setup(
     name="skip-django-reversion-pynamodb",
     version='.'.join(str(x) for x in __version__),
