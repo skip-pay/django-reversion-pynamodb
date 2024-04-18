@@ -39,7 +39,7 @@ setup(
         "import_string>=0.1.0",
     ],
     extras_require={
-        'dynamodb': ['skip-pydjamodb @ git+https://github.com/skip-pay/pydjamodb@tda/chore/django_bump', 'pynamodb==5.3.4'],
+        'dynamodb': ['skip-pydjamodb>=0.1.0', 'pynamodb==5.3.4'],
     },
     python_requires='>=3.8',
     classifiers=[
