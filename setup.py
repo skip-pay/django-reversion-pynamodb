@@ -35,13 +35,13 @@ setup(
         "reversion": ["locale/*/LC_MESSAGES/django.*", "templates/reversion/*.html"]},
     cmdclass=cmdclass,
     install_requires=[
-        "django>=2.2, <4.0",
+        "django>=4.2",
         "import_string>=0.1.0",
     ],
     extras_require={
-        'dynamodb': ['skip-pydjamodb>=0.0.9.2', 'pynamodb>=5.3.4'],
+        'dynamodb': ['skip-pydjamodb>=0.1.0', 'pynamodb==5.3.4'],
     },
-    python_requires='>=3.6',
+    python_requires='>=3.8',
     classifiers=[
         "Development Status :: 5 - Production/Stable",
         "Environment :: Web Environment",

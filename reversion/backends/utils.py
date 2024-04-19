@@ -2,7 +2,7 @@ from django.core import serializers
 from django.core.serializers.base import DeserializationError
 from django.db import models
 from django.utils.encoding import force_str
-from django.utils.translation import ugettext
+from django.utils.translation import gettext
 
 from reversion.errors import RevertError
 from reversion.revisions import _get_options
@@ -15,11 +15,11 @@ def get_object_version(model, data, object_repr, format):
     try:
         return deserialize_instance(format, data, use_natural_foreign_keys=version_options.use_natural_foreign_keys)
     except DeserializationError:
-        raise RevertError(ugettext('Could not load %(object_repr)s version - incompatible version data.') % {
+        raise RevertError(gettext('Could not load %(object_repr)s version - incompatible version data.') % {
             'object_repr': object_repr,
         })
     except serializers.SerializerDoesNotExist:
-        raise RevertError(ugettext('Could not load %(object_repr)s version - unknown serializer %(format)s.') % {
+        raise RevertError(gettext('Could not load %(object_repr)s version - unknown serializer %(format)s.') % {
             'object_repr': object_repr,
             'format': format,
         })
@@ -49,11 +49,11 @@ def get_raw_field_dict(data, object_repr, format):
     try:
         return deserialize_raw_fields(format, data)
     except DeserializationError:
-        raise RevertError(ugettext('Could not load %(object_repr)s version - incompatible version data.') % {
+        raise RevertError(gettext('Could not load %(object_repr)s version - incompatible version data.') % {
             'object_repr': object_repr,
         })
     except serializers.SerializerDoesNotExist:
-        raise RevertError(ugettext('Could not load %(object_repr)s version - unknown serializer %(format)s.') % {
+        raise RevertError(gettext('Could not load %(object_repr)s version - unknown serializer %(format)s.') % {
             'object_repr': object_repr,
             'format': format,
         })

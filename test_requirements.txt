@@ -1,5 +1,5 @@
-django==3.2
-skip-django-germanium==2.3.6.1
+django~=4.2
+skip-django-germanium==2.4.0
 flake8
 coverage
 sphinx
